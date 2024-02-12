@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Watch Later Themsia</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&family=Merriweather:wght@900&display=swap">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+</head>
+
+<body style="background-color: #232323;">
+
+    <style>
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            background-color: none;
+            border: none;
+            outline: none;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+        }
+    </style>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><img src="image/to-top.png" width="30" alt=""></button>
+
+    <section class="h-100 w-100" style="box-sizing: border-box;">
+
+        <style>
+            .header-6-2 .navbar-dark .navbar-nav .nav-link {
+                font: 300 0.875rem/1.25rem Poppins, sans-serif;
+                color: #eeeeee;
+            }
+
+            .header-6-2 #form-search {
+                border: 1px solid #2d3548;
+                background-color: #232938;
+                border-radius: 5.5rem;
+                margin-top: 1.5rem;
+            }
+
+            .header-6-2 #form-search input {
+                font-size: 0.875rem;
+                line-height: 1.25rem;
+                background-color: #232938;
+                color: #B654F1;
+            }
+
+            .header-6-2 #form-search input::placeholder {
+                color: rgba(182, 84, 241, 0.49);
+            }
+
+            .header-6-2 #form-search:focus-within {
+                border: 2px solid rgba(182, 84, 241, 0.49);
+            }
+
+            .header-6-2 #form-search:focus-within input {
+                outline: none;
+            }
+
+            /* md */
+            @media (min-width: 768px) {
+
+
+                .header-6-2 .left-column {
+                    margin-bottom: 3rem;
+                }
+            }
+
+            /* lg */
+            @media (min-width: 992px) {
+
+                .header-6-2 #form-search {
+                    margin-top: 0rem;
+                }
+
+                .header-6-2 form#form-search {
+                    width: 200px;
+                }
+            }
+
+            /* xl */
+            @media (min-width: 1200px) {
+                .header-6-2 form#form-search {
+                    width: 350px;
+                }
+            }
+        </style>
+        <!-- Navbar -->
+        <div class="header-6-2 container mx-auto p-0 position-relative" style="font-family: 'Poppins', sans-serif">
+            <nav class="main navbar navbar-expand-lg navbar-dark" style="padding-top: 0.75rem; padding-bottom: 0.25rem">
+                <div class="container p-0">
+                    <a class="navbar-brand" href="index.html">
+                        <h1 style="margin-right: 10px"><img src="images/e__6_-removebg-preview-removebg-preview.png"
+                                style="margin-right: 50px" alt="Logo Themsia" width="70px" height="70px" >ThemSia</h1>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                        <div class="d-flex mx-4 px-2 py-2"
+                            style="background: rgba(35, 35, 35, 0.7);box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6);border-radius: 40px;">
+
+                            <img src="images/ic-korea.png" width="50" alt="">
+
+
+                            <img src="images/ic-japan.png" width="50" alt="">
+
+
+                            <img src="images/ic-thailand.png" width="50" alt="">
+
+
+                            <img src="images/ic-menu2.png" width="50" alt="">
+
+
+                        </div>
+
+                        <form action="" method="" id="form-search" class="d-flex align-items-center mx-auto me-3">
+                            <button class="btn p-0" type="submit">
+                                <img src="images/ic-search.png" width="50" alt="">
+                            </button>
+                            <input class="ms-2 w-100 border-0" type="text"
+                                placeholder="What do you want to watch today?" />
+                        </form>
+
+                        <div class="d-flex ms-auto px-2 py-2"
+                            style="background: rgba(35, 35, 35, 0.7);box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6);border-radius: 40px;">
+
+                            <img src="images/ic-cloud.png" width="50" alt="">
+
+
+                            <a href="category.html">
+                                <img src="images/ic-menu.png" width="50" alt="">
+                            </a>
+
+
+                            <img src="images/ic-leanguage.png" width="50" alt="">
+
+
+                            <a href="profile.html">
+                                <img src="images/ic-user.png" width="50" alt="">
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </section>
+
+
+
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 ">
+                <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                    <a href="/"
+                        class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                        <span class="fs-5 d-none d-sm-inline">Menu</span>
+                    </a>
+                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start "
+                        id="menu">
+                        <li class="nav-item ">
+                            <a href="history.html" class="nav-link align-middle px-0 text-white ">
+                                <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">History</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link px-0 align-middle text-white">
+                                <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline"
+                                    style="color: #B654F1;">Watch
+                                    Later</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="profile.html" class="nav-link px-0 align-middle  text-white">
+                                <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">My
+                                    Account</span></a>
+
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="login.html" class="nav-link px-0 align-middle">
+                                <i class="fs-4 bi-people"></i> <span
+                                    class="ms-1 d-none d-sm-inline text-white">Logout</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <hr>
+                </div>
+            </div>
+            <div class="col py-3">
+                <section class="resort">
+                    <style type="text/css">
+                        * {
+                            font-family: 'Poppins', sans-serif;
+                        }
+
+                        body .resort {
+                            background: #1B1B1B;
+                            padding-top: 20px;
+                            padding-bottom: 60px;
+                        }
+
+                        @media screen and (max-width: 768px) {
+                            body .resort {
+                                padding-top: 60px;
+                            }
+                        }
+
+                        body .resort .content .headline {
+                            margin-bottom: 60px;
+                            font-family: 'Poppins';
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 48px;
+                            line-height: 68px;
+                            /* or 142% */
+                            color: #FFFFFF;
+                        }
+
+                        @media screen and (max-width: 768px) {
+                            body .resort .content .headline {
+                                font-size: 2.5rem;
+                            }
+                        }
+
+                        body .resort .content * {
+                            -webkit-box-sizing: border-box;
+                            box-sizing: border-box;
+                        }
+
+                        body .resort .content body {
+                            font-family: sans-serif;
+                        }
+
+                        body .resort .content .carousel {
+                            background: #EEE;
+                        }
+
+                        body .resort .content .carousel-cell {
+                            width: 28%;
+                            height: 200px;
+                            margin-right: 10px;
+                            background: #8C8;
+                            border-radius: 5px;
+                            counter-increment: carousel-cell;
+                        }
+
+                        body .resort .content .carousel-cell.is-selected {
+                            background: #ED2;
+                        }
+
+                        body .resort .content .carousel-cell:before {
+                            display: block;
+                            text-align: center;
+                            content: counter(carousel-cell);
+                            line-height: 200px;
+                            font-size: 80px;
+                            color: white;
+                        }
+
+                        body .resort .content .flickity-page-dots .dot {
+                            width: 16px;
+                            height: 16px;
+                            background: #80818b !important;
+                            border: none;
+                        }
+
+                        body .resort .content .flickity-page-dots .dot.is-selected {
+                            background-color: #B654F1 !important;
+                        }
+
+                        body .resort .content .gradient-travland {
+                            background-image: linear-gradient(113.4deg, #B654F1 100%);
+                        }
+
+                        body .resort .content .popular-card {
+                            width: 220px;
+                            margin: 0 22px;
+                        }
+
+                        body .resort .content .box-border {
+                            background: #FFFFFF;
+                            -webkit-box-shadow: 0px 8px 16px rgba(138, 164, 206, 0.08);
+                            box-shadow: 0px 8px 16px rgba(123, 136, 156, 0.08);
+                            border-radius: 16px;
+                        }
+
+                        body .resort .content .box-border img {
+                            border-radius: 16px 16px 0px 0px;
+                        }
+
+                        body .resort .content .box-border .title {
+                            margin-top: 8px;
+                            font-family: Poppins;
+                            font-style: normal;
+                            font-weight: 600;
+                            font-size: 16px;
+                            line-height: 24px;
+                            /* identical to box height */
+                            color: #301B06;
+                        }
+
+                        body .resort .content .box-border .price {
+                            margin-top: 8px;
+                            font-family: Poppins;
+                            font-style: normal;
+                            font-weight: normal;
+                            font-size: 16px;
+                            line-height: 24px;
+                            /* identical to box height */
+                            color: #A4A7B1;
+                        }
+                    </style>
+                    <div class="content container">
+                        <div class="headline text-center border-bottom">
+                            Watch Later
+                        </div>
+                        <!-- CSS -->
+                        <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+                        <!-- Flickity HTML init -->
+                        <div class="carousel" style="background: #1B1B1B !important;"
+                            data-flickity='{ "cellAlign": "left", "contain": true, "groupCells": true, "wrapAround": false, "prevNextButtons": false, "draggable": true }'>
+                            <!-- Card Container 1 -->
+                            <div class="box-border relative rounded-2xl popular-card"
+                                style="background: #1B1B1B !important;">
+                                <div class="flex flex-col">
+                                    <div class="position-absolute z-10 pt-3 ps-3">
+                                        <div
+                                            class="p-2 text-sm font-semibold text-white rounded-circle badge-rating gradient-travland">
+                                            9.2
+                                        </div>
+                                    </div>
+
+                                    <img src="images/history1.png" alt="GetShayna" class="object-cover w-100"
+                                        height="300px" />
+
+                                    <div class="text-center px-4">
+                                        <div class="title text-white">Love is Science</div>
+                                    </div>
+                                    <center>
+                                        <button class="btn btn-watch-now bg-dark px-5 py-2 text-white">
+                                            Watch Now
+                                        </button>
+                                    </center>
+                                </div>
+                            </div>
+                            <!-- Card Container 2 -->
+                            <div class="box-border relative rounded-2xl popular-card"
+                                style="background: #1B1B1B !important;">
+                                <div class="flex flex-col">
+                                    <div class="position-absolute z-10 pt-3 ps-3">
+                                        <div
+                                            class="p-2 text-sm font-semibold text-white rounded-circle badge-rating gradient-travland">
+                                            9.5
+                                        </div>
+                                    </div>
+
+                                    <img src="images/history2.png" alt="GetShayna" class="object-cover w-100"
+                                        height="300px" />
+
+                                    <div class="text-center px-4">
+                                        <div class="title text-white">Keluarga Cemara</div>
+                                    </div>
+                                    <center>
+                                        <button class="btn btn-watch-now bg-dark px-5 py-2 text-white">
+                                            Watch Now
+                                        </button>
+                                    </center>
+                                </div>
+                            </div>
+                            <!-- Card Container 3 -->
+                            <div class="box-border relative rounded-2xl popular-card"
+                                style="background: #1B1B1B !important;">
+                                <div class="flex flex-col">
+                                    <div class="position-absolute z-10 pt-3 ps-3">
+                                        <div
+                                            class="p-2 text-sm font-semibold text-white rounded-circle badge-rating gradient-travland">
+                                            9.7
+                                        </div>
+                                    </div>
+
+                                    <img src="images/history3.png" alt="GetShayna" class="object-cover w-100"
+                                        height="300px" />
+
+                                    <div class="text-center px-4">
+                                        <div class="title text-white">Kamisama no Iu</div>
+                                    </div>
+                                    <center>
+                                        <button class="btn btn-watch-now bg-dark px-5 py-2 text-white">
+                                            Watch Now
+                                        </button>
+                                    </center>
+                                </div>
+                            </div>
+                            <!-- Card Container 4 -->
+                            <div class="box-border relative rounded-2xl popular-card"
+                                style="background: #1B1B1B !important;">
+                                <div class="flex flex-col">
+                                    <div class="position-absolute z-10 pt-3 ps-3">
+                                        <div
+                                            class="p-2 text-sm font-semibold text-white rounded-circle badge-rating gradient-travland">
+                                            9.5
+                                        </div>
+                                    </div>
+
+                                    <img src="images/history4.png" alt="GetShayna" class="object-cover w-100"
+                                        height="300px" />
+
+                                    <div class="text-center px-4">
+                                        <div class="title text-white">Hotel de Luna</div>
+                                    </div>
+                                    <center>
+                                        <button class="btn btn-watch-now bg-dark px-5 py-2 text-white">
+                                            Watch Now
+                                        </button>
+                                    </center>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- JavaScript -->
+                        <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <section class="h-100 w-100" style="box-sizing: border-box;">
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+            .footer-3-3 .list-footer li a {
+                color: #9a9a9a;
+                transition: 0.3s;
+            }
+
+            .footer-3-3 .list-footer li a {
+                line-height: 35px;
+            }
+
+            .footer-3-3 .list-footer li:hover a {
+                color: #85fff8;
+                transition: 0.3s;
+            }
+
+            .footer-3-3 .dropdown-header .dropdown-header-hover:hover a {
+                color: #85fff8 !important;
+            }
+
+            .footer-3-3 .icon-footer:hover circle {
+                fill: #C590EF;
+            }
+
+            .footer-3-3 .icon-footer:hover path {
+                fill: #fff;
+            }
+
+
+
+            .footer-3-3 .left-col,
+            .footer-3-3 .right-col {
+                width: 100%;
+            }
+
+            .footer-3-3 .caption-font {
+                font-weight: 400;
+                font-size: 0.875rem;
+                line-height: 2.25rem;
+                letter-spacing: 1%;
+                color: #f2f2f2;
+                margin-top: 1.25rem;
+                margin-bottom: 1.25rem;
+            }
+
+            .footer-3-3 .title-font {
+                font: 600 1.125rem/1.75rem "Poppins", sans-serif;
+                margin-bottom: 1.25rem;
+                color: #f2f2f2;
+            }
+
+            .footer-3-3 .text-sm {
+                font-size: 0.875rem;
+                line-height: 1.25rem;
+            }
+
+            .footer-3-3 .dropdown-toggle::after {
+                display: none;
+            }
+
+            .footer-3-3 .nav-dropdown {
+                width: 138px;
+                background-color: #212658;
+                padding: 1rem;
+                border-radius: 0.5rem;
+            }
+
+            .footer-3-3 .dropdown-item a,
+            .footer-3-3 .dropdown-item {
+                color: #9a9a9a;
+                background-color: #212658;
+                transition: 0.2s;
+            }
+
+            .footer-3-3 .dropdown-item:focus a,
+            .footer-3-3 .dropdown-item:hover a {
+                color: #85fff8;
+                background-color: #212658;
+                transition: 0.2s;
+            }
+
+            @media (min-width: 576px) {
+                .footer-3-3 .dropdown-header .dropdown-header-hover:hover .dropdown-header-icon-arrow {
+                    display: block;
+                }
+
+                .footer-3-3 .main {
+                    padding: 1rem 2rem 3.5rem;
+                }
+            }
+
+            @media (min-width: 768px) {
+                .footer-3-3 .main {
+                    padding: 1rem 4rem 1rem;
+                }
+            }
+
+            @media (min-width: 992px) {
+                .footer-3-3 .main {
+                    padding: 1rem 4rem 1rem;
+                }
+
+                .footer-3-3 .left-col,
+                .footer-3-3 .right-col {
+                    width: 50%;
+                }
+            }
+
+            @media all and (min-width: 992px) {
+                .footer-3-3 .nav-item .dropdown-menu {
+                    display: none;
+                }
+
+                .footer-3-3 .nav-item:hover .dropdown-menu {
+                    display: block;
+                }
+
+                .footer-3-3 .nav-item .dropdown-menu {
+                    margin-top: 0;
+                }
+            }
+
+            @media (min-width: 1200px) {}
+        </style>
+
+        <footer class="footer-3-3 h-100" style="font-family: 'Poppins', sans-serif">
+            <div class="container-xxl main">
+                <div class="row justify-content-between">
+                    <div class="col-lg-9">
+                        <div class="nav-item dropdown">
+
+                            <a class="d-flex align-items-center position-relative dropdown-toggle text-decoration-none"
+                                href="#" data-bs-toggle="dropdown">
+                                <h5 class="title-font"><img src="images/ic-leanguage.png" width="30" alt="">English</h5>
+                                <svg class="mb-3 ms-1" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 9L12 15L18 9" stroke="#F2F2F2" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </a>
+                            <ul class="dropdown-menu nav-dropdown">
+                                <li>
+                                    <div
+                                        class="dropdown-header-hover dropdown-item h-100 d-flex py-2 ps-2 align-items-center justify-content-start text-start">
+                                        <a href="" class="text-sm text-decoration-none">English</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div
+                                        class="dropdown-header-hover dropdown-item h-100 d-flex py-2 ps-2 align-items-center justify-content-start text-start">
+                                        <a href="" class="text-sm text-decoration-none">Indonesia</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="d-flex gap-4">
+                            <a href="">
+                                <svg class="icon-footer" width="33" height="33" viewBox="0 0 33 33" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="16.2888" cy="16.5363" r="15.5" stroke="white" />
+                                    <g clip-path="url(#clip0-footer-3-3)">
+                                        <path
+                                            d="M20.0119 17.5363L20.4564 14.6408H17.6779V12.7618C17.6779 11.9698 18.0659 11.1973 19.3104 11.1973H20.5734V8.7323C20.5734 8.7323 19.4274 8.5368 18.3314 8.5368C16.0434 8.5368 14.5479 9.9238 14.5479 12.4343V14.6413H12.0044V17.5368H14.5479V24.5368H17.6779V17.5368L20.0119 17.5363Z"
+                                            fill="white" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0-footer-3-3">
+                                            <rect width="16" height="16" fill="white"
+                                                transform="translate(8.28882 8.53632)" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </a>
+                            <a href="">
+                                <svg class="icon-footer" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="16" cy="16" r="15.5" stroke="#F2F2F2" />
+                                    <path
+                                        d="M16 8C13.829 8 13.556 8.01 12.703 8.048C11.85 8.088 11.269 8.222 10.76 8.42C10.2261 8.62082 9.74249 8.93583 9.343 9.343C8.93608 9.7427 8.62111 10.2262 8.42 10.76C8.222 11.268 8.087 11.85 8.048 12.7C8.01 13.555 8 13.827 8 16.001C8 18.173 8.01 18.445 8.048 19.298C8.088 20.15 8.222 20.731 8.42 21.24C8.625 21.766 8.898 22.212 9.343 22.657C9.787 23.102 10.233 23.376 10.759 23.58C11.269 23.778 11.849 23.913 12.701 23.952C13.555 23.99 13.827 24 16 24C18.173 24 18.444 23.99 19.298 23.952C20.149 23.912 20.732 23.778 21.241 23.58C21.7746 23.3791 22.2578 23.0641 22.657 22.657C23.102 22.212 23.375 21.766 23.58 21.24C23.777 20.731 23.912 20.15 23.952 19.298C23.99 18.445 24 18.173 24 16C24 13.827 23.99 13.555 23.952 12.701C23.912 11.85 23.777 11.268 23.58 10.76C23.3789 10.2262 23.0639 9.74268 22.657 9.343C22.2576 8.93568 21.774 8.62065 21.24 8.42C20.73 8.222 20.148 8.087 19.297 8.048C18.443 8.01 18.172 8 15.998 8H16.001H16ZM15.283 9.442H16.001C18.137 9.442 18.39 9.449 19.233 9.488C20.013 9.523 20.437 9.654 20.719 9.763C21.092 9.908 21.359 10.082 21.639 10.362C21.919 10.642 22.092 10.908 22.237 11.282C22.347 11.563 22.477 11.987 22.512 12.767C22.551 13.61 22.559 13.863 22.559 15.998C22.559 18.133 22.551 18.387 22.512 19.23C22.477 20.01 22.346 20.433 22.237 20.715C22.1087 21.0624 21.904 21.3764 21.638 21.634C21.358 21.914 21.092 22.087 20.718 22.232C20.438 22.342 20.014 22.472 19.233 22.508C18.39 22.546 18.137 22.555 16.001 22.555C13.865 22.555 13.611 22.546 12.768 22.508C11.988 22.472 11.565 22.342 11.283 22.232C10.9355 22.1039 10.6211 21.8996 10.363 21.634C10.0968 21.376 9.89172 21.0617 9.763 20.714C9.654 20.433 9.523 20.009 9.488 19.229C9.45 18.386 9.442 18.133 9.442 15.996C9.442 13.86 9.45 13.608 9.488 12.765C9.524 11.985 9.654 11.561 9.764 11.279C9.909 10.906 10.083 10.639 10.363 10.359C10.643 10.079 10.909 9.906 11.283 9.761C11.565 9.651 11.988 9.521 12.768 9.485C13.506 9.451 13.792 9.441 15.283 9.44V9.442ZM20.271 10.77C20.1449 10.77 20.0201 10.7948 19.9036 10.8431C19.7872 10.8913 19.6813 10.962 19.5922 11.0512C19.503 11.1403 19.4323 11.2462 19.3841 11.3626C19.3358 11.4791 19.311 11.6039 19.311 11.73C19.311 11.8561 19.3358 11.9809 19.3841 12.0974C19.4323 12.2138 19.503 12.3197 19.5922 12.4088C19.6813 12.498 19.7872 12.5687 19.9036 12.6169C20.0201 12.6652 20.1449 12.69 20.271 12.69C20.5256 12.69 20.7698 12.5889 20.9498 12.4088C21.1299 12.2288 21.231 11.9846 21.231 11.73C21.231 11.4754 21.1299 11.2312 20.9498 11.0512C20.7698 10.8711 20.5256 10.77 20.271 10.77ZM16.001 11.892C15.4561 11.8835 14.9149 11.9835 14.409 12.1861C13.9031 12.3888 13.4425 12.6901 13.0542 13.0724C12.6658 13.4548 12.3574 13.9106 12.1468 14.4133C11.9363 14.916 11.8279 15.4555 11.8279 16.0005C11.8279 16.5455 11.9363 17.085 12.1468 17.5877C12.3574 18.0904 12.6658 18.5462 13.0542 18.9286C13.4425 19.3109 13.9031 19.6122 14.409 19.8149C14.9149 20.0175 15.4561 20.1175 16.001 20.109C17.0795 20.0922 18.1082 19.6519 18.865 18.8833C19.6217 18.1146 20.0459 17.0792 20.0459 16.0005C20.0459 14.9218 19.6217 13.8864 18.865 13.1177C18.1082 12.3491 17.0795 11.9088 16.001 11.892ZM16.001 13.333C16.7083 13.333 17.3867 13.614 17.8869 14.1141C18.387 14.6143 18.668 15.2927 18.668 16C18.668 16.7073 18.387 17.3857 17.8869 17.8859C17.3867 18.386 16.7083 18.667 16.001 18.667C15.2937 18.667 14.6153 18.386 14.1151 17.8859C13.615 17.3857 13.334 16.7073 13.334 16C13.334 15.2927 13.615 14.6143 14.1151 14.1141C14.6153 13.614 15.2937 13.333 16.001 13.333Z"
+                                        fill="#F2F2F2" />
+                                </svg>
+                            </a>
+                            <a href="">
+                                <svg class="icon-footer" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="16" cy="16" r="15.5" stroke="#F2F2F2" />
+                                    <path
+                                        d="M23.7621 11.2912C23.2054 11.5379 22.6074 11.7046 21.9788 11.7799C22.6274 11.3918 23.1127 10.7809 23.3441 10.0612C22.7347 10.4232 22.0677 10.678 21.3721 10.8146C20.9043 10.3151 20.2848 9.98411 19.6096 9.87287C18.9345 9.76164 18.2415 9.87642 17.6382 10.1994C17.035 10.5224 16.5553 11.0355 16.2735 11.659C15.9918 12.2826 15.9238 12.9817 16.0801 13.6479C14.8452 13.5859 13.6372 13.2649 12.5344 12.7058C11.4316 12.1467 10.4586 11.362 9.67876 10.4026C9.41209 10.8626 9.25876 11.3959 9.25876 11.9639C9.25846 12.4752 9.38438 12.9787 9.62534 13.4297C9.86631 13.8807 10.2149 14.2652 10.6401 14.5492C10.1469 14.5335 9.66467 14.4003 9.23342 14.1606V14.2006C9.23337 14.9177 9.48144 15.6128 9.93554 16.1679C10.3896 16.723 11.0218 17.1038 11.7248 17.2459C11.2673 17.3697 10.7876 17.3879 10.3221 17.2992C10.5204 17.9163 10.9068 18.4559 11.427 18.8425C11.9472 19.2291 12.5754 19.4433 13.2234 19.4552C12.1233 20.3188 10.7647 20.7873 9.36609 20.7852C9.11834 20.7853 8.87081 20.7708 8.62476 20.7419C10.0444 21.6547 11.697 22.1391 13.3848 22.1372C19.0981 22.1372 22.2214 17.4052 22.2214 13.3012C22.2214 13.1679 22.2181 13.0332 22.2121 12.8999C22.8196 12.4605 23.344 11.9165 23.7608 11.2932L23.7621 11.2912Z"
+                                        fill="#F2F2F2" />
+                                </svg>
+                            </a>
+                            <a href="">
+                                <svg class="icon-footer" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="16" cy="16" r="15.5" stroke="#F2F2F2" />
+                                    <path
+                                        d="M24 10.9999V20.9999C24 21.5674 23.5675 21.9999 23 21.9999H22V12.9244L16 17.2344L10 12.9244V21.9999H9C8.4325 21.9999 8 21.5674 8 20.9999V10.9999C8 10.7159 8.107 10.4659 8.2865 10.2889C8.37999 10.1953 8.49132 10.1216 8.6139 10.0719C8.73647 10.0223 8.86777 9.99777 9 9.99988H9.3335L16 14.8334L22.6665 9.99988H23C23.284 9.99988 23.534 10.1069 23.7135 10.2889C23.893 10.4659 24 10.7159 24 10.9999Z"
+                                        fill="#F2F2F2" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-xxl mx-auto main">
+
+                <div class="mb-5">
+                    <hr style="border-color: #C590EF;background-color: #C590EF;opacity: 1;" />
+                </div>
+
+                <div class="d-flex row gap-lg-0 gap-4">
+                    <div class="col-lg-3">
+                        <h5 class="title-font">About ThemSia</h5>
+                        <nav class="list-unstyled list-footer d-grid gap-3">
+                            <li class="text-sm">
+                                <a href="#" class="text-decoration-none">About us</a>
+                            </li>
+                            <li class="text-sm">
+                                <a href="#" class="text-decoration-none">Products and Services</a>
+                            </li>
+                        </nav>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <h5 class="title-font">Cooperation</h5>
+                        <nav class="list-unstyled list-footer d-grid gap-3">
+                            <li class="text-sm">
+                                <a href="#" class="text-decoration-none">Advertise</a>
+                            </li>
+                            <li class="text-sm">
+                                <a href="#" class="text-decoration-none">Corporate relations</a>
+                            </li>
+                            <li class="text-sm">
+                                <a href="#" class="text-decoration-none">Preinstall Cooperation</a>
+                            </li>
+                        </nav>
+                    </div>
+                    <div class="col-lg-3">
+                        <h5 class="title-font">Help and support</h5>
+                        <nav class="list-unstyled list-footer d-grid gap-3">
+                            <li class="text-sm">
+                                <a href="#" class="text-decoration-none">Feedback</a>
+                            </li>
+                            <li class="text-sm">
+                                <a href="#" class="text-decoration-none">Security Response Center</a>
+                            </li>
+                            <li class="text-sm">
+                                <a href="#" class="text-decoration-none">FAQ</a>
+                            </li>
+                        </nav>
+                    </div>
+                    <div class="col-lg-3">
+                        <h5 class="title-font">Terms of Service</h5>
+                        <nav class="list-unstyled list-footer d-grid gap-3">
+                            <li class="text-sm">
+                                <a href="#" class="text-decoration-none">Privacy Policy</a>
+                            </li>
+                            <li class="text-sm">
+                                <a href="#" class="text-decoration-none">Terms of Service</a>
+                            </li>
+                        </nav>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="mx-auto">
+                <div class="">
+                    <hr style="border-color: #C590EF;background-color: #C590EF;opacity: 1;" />
+                </div>
+                <div class="container mx-auto mt-5 pb-5">
+                    <nav class="text-center" style="font-size: 1rem; color: #fff">
+                        <p class="m-0">Copyright © 2021 ThemSia All Rights Reserved </p>
+                    </nav>
+                </div>
+            </div>
+            </div>
+        </footer>
+    </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+        </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+        </script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+</body>
+
+</html>
